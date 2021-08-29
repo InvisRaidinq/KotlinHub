@@ -1,0 +1,50 @@
+scoreboard:
+  title: '&6&lKotlinHub &c[Hub 1]'
+  lines:
+    in-queue:
+      - '&7&m---------------------'
+      - '&6&lOnline Players'
+      - ' &f%online_players%'
+      - ''
+      - '&6&lQueue'
+      - ' &fServer: %queue_name%'
+      - ' &fPosition: %queue_position% / %queue_size%'
+      - ''
+      - '&7&oinvisraidinq.xyz'
+      - '&7&m---------------------'
+    no-queue:
+      - '&7&m---------------------'
+      - '&6&lOnline Players'
+      - ' &f%online_players%'
+      - ''
+      - '&7&oinvisraidinq.xyz'
+      - '&7&m---------------------'
+
+on-join:
+  join-message: '&7[&a+&7] %player%'
+  welcome-message:
+    - '&7&m---------------------'
+    - '&7Welcome to the &6&lKotlinHub &7network!'
+    - '&7&m---------------------'
+
+on-quit:
+  quit-message: '&7[&c-&7] %player%'
+
+selector:
+  slot: 3
+  menu-name: '&dServer Selector'
+  menu-size: 9
+  item:
+    slot: 4
+    material: 'COMPASS'
+    name: '&d&lServer Selector'
+    lore:
+      - '&7Hi, I am a server selector'
+  items:
+    hcf:
+      slot: 2
+      command: 'joinqueue prison'
+      material: DIAMOND_SWORD
+      name: '&6&lHCF'
+      lore:
+        - '&7Join HCF here'
