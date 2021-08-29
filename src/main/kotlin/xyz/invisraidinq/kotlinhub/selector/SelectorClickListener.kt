@@ -41,7 +41,7 @@ class SelectorClickListener constructor(private val plugin: HubPlugin) : Listene
             return
         }
 
-        event.isCancelled = true;
+        event.isCancelled = true
         for (key in this.plugin.config.getConfigurationSection("selector.items").getKeys(false)) {
             val path = "selector.items.$key."
             if (event.slot == this.plugin.config.getInt(path + "slot")) {

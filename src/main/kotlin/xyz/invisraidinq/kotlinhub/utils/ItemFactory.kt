@@ -17,8 +17,8 @@ class ItemFactory constructor(private val material: Material) {
 
     fun setLore(lore: List<String>) : ItemFactory {
         val itemMeta: ItemMeta = this.itemStack.itemMeta
-        itemMeta.lore = CC.colour(lore);
-        this.itemStack.itemMeta = itemMeta;
+        itemMeta.lore = CC.colour(lore)
+        this.itemStack.itemMeta = itemMeta
         return this
     }
 

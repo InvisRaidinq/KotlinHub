@@ -30,6 +30,13 @@ on-join:
 on-quit:
   quit-message: '&7[&c-&7] %player%'
 
+messages:
+  cannot-place-block: '&cYou cannot place blocks in the hub'
+  cannot-break-block: '&cYou cannot break blocks in the hub'
+
+broadcasts:
+  - '&6&l[TIP] &eMake these messages look nicer'
+
 selector:
   slot: 3
   menu-name: '&dServer Selector'
