@@ -11,6 +11,6 @@ class AutoBroadcastTask constructor(private val plugin: HubPlugin) : BukkitRunna
     private val broadcasts: List<String> = this.plugin.config.getStringList("broadcasts")
 
     override fun run() {
-        Bukkit.broadcastMessage(CC.colour(this.broadcasts.get(ThreadLocalRandom.current().nextInt(this.broadcasts.size))));
+        Bukkit.broadcastMessage(CC.colour(this.broadcasts[ThreadLocalRandom.current().nextInt(this.broadcasts.size)]));
     }
 }
