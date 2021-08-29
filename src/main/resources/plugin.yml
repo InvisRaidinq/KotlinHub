@@ -3,3 +3,5 @@ version: ${project.version}
 author: InvisRaidinq
 main: xyz.invisraidinq.kotlinhub.HubPlugin
 depend: [Portal, QueryAPI-Bukkit]
+commands:
+  setspawn:

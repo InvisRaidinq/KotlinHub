@@ -5,6 +5,7 @@ import io.github.thatkawaiisam.assemble.AssembleStyle
 import org.bukkit.Bukkit
 import org.bukkit.plugin.java.JavaPlugin
 import xyz.invisraidinq.kotlinhub.board.ScoreboardProvider
+import xyz.invisraidinq.kotlinhub.commands.SetSpawnCommand
 import xyz.invisraidinq.kotlinhub.listeners.HubListeners
 import xyz.invisraidinq.kotlinhub.listeners.PlayerJoinListener
 import xyz.invisraidinq.kotlinhub.listeners.PlayerQuitListener
@@ -28,6 +29,8 @@ class HubPlugin : JavaPlugin() {
         this.assemble.assembleStyle = AssembleStyle.MODERN
         CC.log("&6Set up and enabled the scoreboard")
 
+        this.getCommand("setspawn").executor = SetSpawnCommand()
+        
         listOf(
             PlayerJoinListener(this),
             PlayerQuitListener(this),
