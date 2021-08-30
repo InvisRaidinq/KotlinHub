@@ -18,6 +18,8 @@ class PlayerJoinListener(private val plugin: HubPlugin) : Listener {
         event.joinMessage = CC.colour(this.plugin.config.getString("on-join.join-message")
             .replace("%player%", player.name))
 
+        player.teleport(player.world.spawnLocation)
+
         for (line in this.plugin.config.getStringList("on-join.welcome-message")) {
             player.sendMessage(CC.colour(line.replace("%player%", player.name)))
         }
