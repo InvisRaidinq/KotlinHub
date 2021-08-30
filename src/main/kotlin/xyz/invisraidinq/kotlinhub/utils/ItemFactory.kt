@@ -1,8 +1,9 @@
 package xyz.invisraidinq.kotlinhub.utils
 
 import org.bukkit.Material
+import org.bukkit.enchantments.Enchantment
+import org.bukkit.inventory.ItemFlag
 import org.bukkit.inventory.ItemStack
-import org.bukkit.inventory.meta.ItemMeta
 
 class ItemFactory(private val material: Material) {
 
@@ -20,6 +21,13 @@ class ItemFactory(private val material: Material) {
         itemMeta.lore = CC.colour(lore)
         this.itemStack.itemMeta = itemMeta
         return this
+    }
+
+    fun setEnchanted() : ItemFactory {
+        val itemMeta = this.itemStack.itemMeta;
+        this.itemStack.addUnsafeEnchantment(Enchantment.LURE, 1)
+        itemMeta.addItemFlags(ItemFlag.HIDE_ENCHANTS)
+        return this;
     }
 
     fun build() : ItemStack {

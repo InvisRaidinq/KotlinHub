@@ -13,5 +13,5 @@ class AutoBroadcastTask(private val plugin: HubPlugin) : BukkitRunnable() {
     override fun run() {
         Bukkit.broadcastMessage(CC.colour(this.broadcasts[ThreadLocalRandom.current().nextInt(this.broadcasts.size)]))
     }
-    
+
 }
