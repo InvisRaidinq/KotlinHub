@@ -9,7 +9,7 @@ import xyz.invisraidinq.kotlinhub.HubPlugin
 import xyz.invisraidinq.kotlinhub.utils.CC
 import xyz.invisraidinq.kotlinhub.utils.ItemFactory
 
-class ServerSelectorMenu constructor(private val plugin: HubPlugin, private val player: Player) {
+class ServerSelectorMenu(private val plugin: HubPlugin, private val player: Player) {
 
     fun openMenu() {
         val inventory: Inventory = Bukkit.createInventory(null,

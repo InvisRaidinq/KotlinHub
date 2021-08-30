@@ -9,11 +9,11 @@ import xyz.invisraidinq.kotlinhub.HubPlugin
 import xyz.invisraidinq.kotlinhub.selector.menus.ServerSelectorMenu
 import xyz.invisraidinq.kotlinhub.utils.CC
 
-class SelectorClickListener constructor(private val plugin: HubPlugin) : Listener {
+class SelectorClickListener(private val plugin: HubPlugin) : Listener {
 
     @EventHandler
     fun onSelectorClick(event: PlayerInteractEvent) {
-        val player: Player = event.player
+        val player = event.player
 
         if (event.item == null) {
             return
@@ -32,7 +32,8 @@ class SelectorClickListener constructor(private val plugin: HubPlugin) : Listene
 
     @EventHandler
     fun onInventoryClick(event: InventoryClickEvent) {
-        val player: Player = event.whoClicked as Player
+        val player = event.whoClicked as Player
+
         if (player.openInventory == null) {
             return
         }
@@ -42,8 +43,10 @@ class SelectorClickListener constructor(private val plugin: HubPlugin) : Listene
         }
 
         event.isCancelled = true
+
         for (key in this.plugin.config.getConfigurationSection("selector.items").getKeys(false)) {
             val path = "selector.items.$key."
+
             if (event.slot == this.plugin.config.getInt(path + "slot")) {
                 player.performCommand(this.plugin.config.getString(path + "command"))
             }

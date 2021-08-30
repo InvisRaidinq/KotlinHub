@@ -7,7 +7,7 @@ import org.bukkit.event.player.PlayerQuitEvent
 import xyz.invisraidinq.kotlinhub.HubPlugin
 import xyz.invisraidinq.kotlinhub.utils.CC
 
-class PlayerQuitListener constructor(private val plugin: HubPlugin) : Listener {
+class PlayerQuitListener(private val plugin: HubPlugin) : Listener {
 
     @EventHandler
     fun onPlayerQuit(event: PlayerQuitEvent) {

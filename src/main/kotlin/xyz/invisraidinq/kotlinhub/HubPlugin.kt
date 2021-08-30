@@ -2,7 +2,6 @@ package xyz.invisraidinq.kotlinhub
 
 import io.github.thatkawaiisam.assemble.Assemble
 import io.github.thatkawaiisam.assemble.AssembleStyle
-import org.bukkit.Bukkit
 import org.bukkit.plugin.java.JavaPlugin
 import xyz.invisraidinq.kotlinhub.board.ScoreboardProvider
 import xyz.invisraidinq.kotlinhub.commands.SetSpawnCommand
@@ -16,8 +15,9 @@ import xyz.invisraidinq.kotlinhub.utils.CC
 
 class HubPlugin : JavaPlugin() {
 
-    val selectorManager: SelectorManager = SelectorManager(this)
     private lateinit var assemble: Assemble
+
+    val selectorManager = SelectorManager(this)
 
     override fun onEnable() {
         CC.log("&6Enabling KotlinHub v" + this.description.version)
@@ -27,6 +27,7 @@ class HubPlugin : JavaPlugin() {
         this.assemble = Assemble(this, ScoreboardProvider(this))
         this.assemble.ticks = 20L
         this.assemble.assembleStyle = AssembleStyle.MODERN
+
         CC.log("&6Set up and enabled the scoreboard")
 
         this.getCommand("setspawn").executor = SetSpawnCommand()
@@ -37,7 +38,7 @@ class HubPlugin : JavaPlugin() {
             SelectorClickListener(this),
             HubListeners(this)
         ).forEach {
-            Bukkit.getPluginManager().registerEvents(it, this)
+            server.pluginManager.registerEvents(it, this)
         }
 
         AutoBroadcastTask(this).runTaskTimerAsynchronously(this, 0L, 20 * 60)

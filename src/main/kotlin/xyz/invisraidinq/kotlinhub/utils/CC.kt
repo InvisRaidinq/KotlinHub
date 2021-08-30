@@ -3,7 +3,6 @@ package xyz.invisraidinq.kotlinhub.utils
 import org.bukkit.Bukkit
 import org.bukkit.ChatColor
 
-
 object CC {
 
     fun colour(text: String) : String {

@@ -1,6 +1,5 @@
 package xyz.invisraidinq.kotlinhub.listeners
 
-import org.bukkit.entity.Player
 import org.bukkit.event.EventHandler
 import org.bukkit.event.Listener
 import org.bukkit.event.player.PlayerJoinEvent
@@ -9,11 +8,13 @@ import org.bukkit.potion.PotionEffectType
 import xyz.invisraidinq.kotlinhub.HubPlugin
 import xyz.invisraidinq.kotlinhub.utils.CC
 
-class PlayerJoinListener constructor(private val plugin: HubPlugin) : Listener {
+class PlayerJoinListener(private val plugin: HubPlugin) : Listener {
+
+    val speedEffect = PotionEffect(PotionEffectType.SPEED, Integer.MAX_VALUE, 3)
 
     @EventHandler
     fun onPlayerJoin(event: PlayerJoinEvent) {
-        val player: Player = event.player
+        val player = event.player
         event.joinMessage = CC.colour(this.plugin.config.getString("on-join.join-message")
             .replace("%player%", player.name))
 
@@ -30,6 +31,6 @@ class PlayerJoinListener constructor(private val plugin: HubPlugin) : Listener {
             player.removePotionEffect(effect.type)
         }
 
-        player.addPotionEffect(PotionEffect(PotionEffectType.SPEED, Integer.MAX_VALUE, 3))
+        player.addPotionEffect(speedEffect)
     }
 }
