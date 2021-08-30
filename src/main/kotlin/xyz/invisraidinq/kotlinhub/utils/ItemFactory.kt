@@ -27,6 +27,7 @@ class ItemFactory(private val material: Material) {
         val itemMeta = this.itemStack.itemMeta;
         this.itemStack.addUnsafeEnchantment(Enchantment.LURE, 1)
         itemMeta.addItemFlags(ItemFlag.HIDE_ENCHANTS)
+        this.itemStack.itemMeta = itemMeta;
         return this;
     }
 
