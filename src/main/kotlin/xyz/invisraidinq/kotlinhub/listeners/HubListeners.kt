@@ -10,7 +10,7 @@ import org.bukkit.event.inventory.InventoryMoveItemEvent
 import xyz.invisraidinq.kotlinhub.HubPlugin
 import xyz.invisraidinq.kotlinhub.utils.CC
 
-class HubListeners constructor(private val plugin: HubPlugin) : Listener {
+class HubListeners(private val plugin: HubPlugin) : Listener {
 
     @EventHandler
     fun onBlockPlace(event: BlockPlaceEvent) {

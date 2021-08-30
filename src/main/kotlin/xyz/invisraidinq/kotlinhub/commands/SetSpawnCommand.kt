@@ -31,4 +31,5 @@ class SetSpawnCommand : CommandExecutor {
         player.sendMessage(CC.colour("&aYou have updated the spawn location!"))
         return true
     }
+    
 }
